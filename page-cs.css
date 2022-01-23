@@ -40,9 +40,7 @@ body{
 }
 
 .navigate nav{
-	display: flex;
-	flex-direction: row;
-	justify-self: center;
+	display: inline-flex;
 }
 
 .items{
