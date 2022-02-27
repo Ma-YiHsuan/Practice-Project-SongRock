@@ -180,7 +180,7 @@ nav .items:nth-last-child(1) a:hover{
 	margin: 6rem 0;
 	display: flex;
 	flex-direction: row;
-	justify-self: flex-start;
+	justify-content: flex-start;
 }
 
 .list-sort a{
@@ -226,8 +226,8 @@ nav .items:nth-last-child(1) a:hover{
 .goods{
 	width: 22%;
 	height: auto;
-	margin-right: 1.3rem;
-	margin-left: 1.3rem;
+	margin-right: 1rem;
+	margin-left: 1rem;
 	margin-bottom: 2rem;
 	transition: 0.5s ease-out;
 }
@@ -256,4 +256,35 @@ nav .items:nth-last-child(1) a:hover{
 .goods:hover{
 	box-shadow: 0 0.5rem 20px 0.5rem rgba(231, 231, 231, 0.1),
 	            0 0.3rem 20px 0.25rem rgba(136, 136, 136, 0.15);
+}
+
+/* @media (min-width:1490px){
+	.allin{
+		padding: 0 7rem;
+	}
+	.title h1{
+		font-size: 2.3rem;
+	}
+	.title p{
+		font-size: 1.3rem;
+	}
+	.title a{
+		font-size: 1rem;
+	}
+} */
+
+@media (max-width:1366px) {
+	.items{
+		font-size: 0.8rem;
+	}
+	.logoP {
+		width: 7.5rem;
+	}
+	.list-sort{
+		margin: 5rem 0 3rem 0;
+		justify-content: space-between;
+	}
+	.list-sort a {
+		width: 20%;
+	}
 }
