@@ -288,3 +288,28 @@ nav .items:nth-last-child(1) a:hover{
 		width: 20%;
 	}
 }
+
+@media (max-width:1200px){
+	.allin{
+		padding:2rem;
+	}
+	.items{
+		font-size: 0.8rem;
+	}
+	.logoP {
+		width: 7.5rem;
+	}
+	.list-sort{
+		margin: 5rem 0 3rem 0;
+		justify-content: space-between;
+	}
+	.list-sort a {
+		width: 20%;
+	}
+	.goods{
+		width: 25%;
+		margin-right: 0rem;
+		margin-left: 0rem;
+		margin-bottom: 2rem;
+	}
+}
