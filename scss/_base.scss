@@ -18,4 +18,11 @@ body {
 a {
     text-decoration: none;
     color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    outline: unset;
+}
+
+li {
+    list-style: none;
 }

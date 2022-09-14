@@ -18,27 +18,104 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  outline: unset;
+}
+
+li {
+  list-style: none;
+}
+
+.header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 5;
 }
 
 .navigate {
   padding: 0 1em 0 2em;
-  background-color: #000;
+  background-color: transparent;
   display: flex;
   justify-content: space-between;
 }
 .navigate-logo {
   width: 13.5rem;
-  fill: #fff;
+  fill: #000;
 }
-.navigate > nav {
+.navigate-list {
   display: inline-block;
+  font-size: 0;
   padding: 2rem 0;
 }
-.navigate-items {
+.navigate-item {
+  display: inline-block;
+  color: #FAA619;
   font-size: 1.6rem;
-  color: #fff;
-  transition: color 0.5s ease;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 3px;
+  transition: all 0.5s ease-out;
 }
-.navigate-items:hover {
-  color: red;
+.navigate-item:hover {
+  color: #d68f13;
+}
+.navigate-item:not(:last-child) {
+  color: #000;
+  margin-right: 3rem;
+}
+.navigate-item:not(:last-child):hover {
+  color: #D9321B;
+}
+
+.title {
+  background: url("https://images.pexels.com/photos/2356059/pexels-photo-2356059.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-size: cover;
+  background-position: 50% 27%;
+  height: 50rem;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+.title-content {
+  background-color: #fff;
+  width: 50%;
+  height: 50%;
+  padding: 3rem;
+  position: relative;
+  top: 75%;
+  left: 25%;
+  text-align: center;
+  z-index: 1;
+}
+.title-content > p {
+  margin-top: 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.title-heading {
+  color: #D9321B;
+  font-weight: 700;
+  font-size: 5rem;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+}
+.title-item {
+  display: inline;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #000;
+}
+.title-item:not(:first-of-type)::before {
+  content: "/";
+  color: #D9321B;
+  font-weight: 700;
+  margin: 1rem;
+}
+.title-item > a:hover {
+  text-decoration: underline;
 }/*# sourceMappingURL=main.css.map */
