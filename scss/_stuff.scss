@@ -1,0 +1,37 @@
+.section-stuff {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5rem 8rem;
+
+    &-box {
+        margin: 2rem 4.25rem;
+
+        &:hover {
+            box-shadow: 0 0.5rem 20px 0.5rem $colorShadow-1,
+	                    0 0.3rem 20px 0.25rem $colorShadow-2;
+        }
+    }
+
+    &-content {
+        width: 35rem;
+        height: auto;
+        padding: 3rem;
+
+        > img {
+            width: 100%;
+            height: auto;
+            margin-bottom: .5rem;
+        }
+
+        > p {
+            font-size: $fontSize-default;
+        }
+    }
+
+    &-heading {
+        font-size: 2rem;
+        font-weight: 700;
+	    letter-spacing: 1px;
+	    margin: .5rem 0;
+    }
+}

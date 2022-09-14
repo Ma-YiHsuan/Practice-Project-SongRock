@@ -75,7 +75,7 @@ li {
   background-size: cover;
   background-position: 50% 27%;
   height: 50rem;
-  width: 100vw;
+  width: 100%;
   position: absolute;
   top: 0;
   z-index: -1;
@@ -155,4 +155,35 @@ li {
   font-size: 1.6rem;
   font-weight: 400;
   letter-spacing: 1px;
+}
+
+.section-stuff {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5rem 8rem;
+}
+.section-stuff-box {
+  margin: 2rem 4.25rem;
+}
+.section-stuff-box:hover {
+  box-shadow: 0 0.5rem 20px 0.5rem rgba(231, 231, 231, 0.1), 0 0.3rem 20px 0.25rem rgba(136, 136, 136, 0.15);
+}
+.section-stuff-content {
+  width: 35rem;
+  height: auto;
+  padding: 3rem;
+}
+.section-stuff-content > img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+.section-stuff-content > p {
+  font-size: 1.6rem;
+}
+.section-stuff-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0.5rem 0;
 }/*# sourceMappingURL=main.css.map */
