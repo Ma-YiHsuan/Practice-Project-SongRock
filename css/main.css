@@ -118,4 +118,41 @@ li {
 }
 .title-item > a:hover {
   text-decoration: underline;
+}
+
+.cetagory {
+  margin-top: 55rem;
+  padding-left: 8rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.cetagory > a:not(:last-child) {
+  margin-right: 4rem;
+}
+.cetagory > a:hover > .cetagory-box {
+  color: #D9321B;
+  border: 1.35px solid #D9321B;
+}
+.cetagory > a:hover > .cetagory-box > img {
+  filter: grayscale(0);
+}
+.cetagory-box {
+  display: flex;
+  align-items: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-right: 5rem;
+  border: 1.35px solid #c9c9c9;
+  transition: color 0.5s ease, border 0.5s ease;
+}
+.cetagory-box > img {
+  width: 8rem;
+  filter: grayscale(100%);
+  transition: all 0.5s ease-out;
+}
+.cetagory-box > p {
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 1px;
 }/*# sourceMappingURL=main.css.map */
