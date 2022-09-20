@@ -4,6 +4,20 @@
 	z-index: 5;
 }
 
+.navChange {
+	background-color: $colorBlack !important;
+
+	&-logo {
+		fill: $colorWhite !important;
+	}
+
+	&-item {
+		&:not(:last-child) {
+			color: $colorWhite !important;
+		}
+	}
+}
+
 .navigate {
 	padding: 0 1em 0 2em;
 	background-color: transparent;

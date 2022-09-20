@@ -15,9 +15,9 @@
 </head>
 
 <body>
-    <header class="header" id="header">
-        <div class="navigate">
-            <div class="navigate-logo">
+    <header class="header">
+        <div class="navigate" id="nav">
+            <div class="navigate-logo" id="navLogo">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 422.81 200">
                     <g id="Song">
                         <path
@@ -69,7 +69,7 @@
     <main>
         <section class="title">
             <div class="title-bg"></div>
-            <div class="title-content">
+            <div class="title-content" id="titleContent">
                 <h1 class="title-heading">Procducts</h1>
                 <div class="title-item">
                     <a href="#">Home</a>
@@ -112,111 +112,13 @@
                 </div>
             </a>
         </div>
-
-        <section class="section-stuff">
-            <div class="section-stuff-box">
+        <section class="section-stuff" id="stuffs">
+            <div class="section-stuff-box" v-for="n in amount">
                 <a href="#">
                     <div class="section-stuff-content">
-                        <img src="https://s.yimg.com/zp/MerchandiseImages/7AEA34653A-SP-7471103.jpg" alt="">
-                        <h2 class="section-stuff-heading">FOR NAME</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse sed deleniti, maxime
-                            perferendis repellat.</p>
-                    </div>
-                </a>
-            </div>
-            <div class="section-stuff-box">
-                <a href="#">
-                    <div class="section-stuff-content">
-                        <img src="https://s.yimg.com/zp/MerchandiseImages/7AEA34653A-SP-7471103.jpg" alt="">
-                        <h2 class="section-stuff-heading">FOR NAME</h2>
-                        <p>Lorem ipsum adipisicing elit. Esse sed deleniti, perferendis repellat.
-                        </p>
-                    </div>
-                </a>
-            </div>
-            <div class="section-stuff-box">
-                <a href="#">
-                    <div class="section-stuff-content">
-                        <img src="https://s.yimg.com/zp/MerchandiseImages/7AEA34653A-SP-7471103.jpg" alt="">
-                        <h2 class="section-stuff-heading">FOR NAME</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse sed deleniti, perferendis
-                            repellat.
-                        </p>
-                    </div>
-                </a>
-            </div>
-            <div class="section-stuff-box">
-                <a href="#">
-                    <div class="section-stuff-content">
-                        <img src="https://s.yimg.com/zp/MerchandiseImages/7AEA34653A-SP-7471103.jpg" alt="">
-                        <h2 class="section-stuff-heading">FOR NAME</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse sed deleniti, perferendis
-                            repellat.
-                        </p>
-                    </div>
-                </a>
-            </div>
-            <div class="section-stuff-box">
-                <a href="#">
-                    <div class="section-stuff-content">
-                        <img src="https://s.yimg.com/zp/MerchandiseImages/7AEA34653A-SP-7471103.jpg" alt="">
-                        <h2 class="section-stuff-heading">FOR NAME</h2>
-                        <p>Lorem ipsum consectetur adipisicing elit. Esse sed deleniti, perferendis repellat.Ipsum frew
-                            dolorelit.
-                        </p>
-                    </div>
-                </a>
-            </div>
-            <div class="section-stuff-box">
-                <a href="#">
-                    <div class="section-stuff-content">
-                        <img src="https://s.yimg.com/zp/MerchandiseImages/7AEA34653A-SP-7471103.jpg" alt="">
-                        <h2 class="section-stuff-heading">FOR NAME</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse sed deleniti, perferendis
-                            repellat.
-                        </p>
-                    </div>
-                </a>
-            </div>
-            <div class="section-stuff-box">
-                <a href="#">
-                    <div class="section-stuff-content">
-                        <img src="https://s.yimg.com/zp/MerchandiseImages/7AEA34653A-SP-7471103.jpg" alt="">
-                        <h2 class="section-stuff-heading">FOR NAME</h2>
-                        <p>Amet consectetur adipisicing elit. Esse sed deleniti, perferendis repellat.
-                        </p>
-                    </div>
-                </a>
-            </div>
-            <div class="section-stuff-box">
-                <a href="#">
-                    <div class="section-stuff-content">
-                        <img src="https://s.yimg.com/zp/MerchandiseImages/7AEA34653A-SP-7471103.jpg" alt="">
-                        <h2 class="section-stuff-heading">FOR NAME</h2>
-                        <p>Lorem lit. Esse sed deleniti, perferendis repellat.
-                        </p>
-                    </div>
-                </a>
-            </div>
-            <div class="section-stuff-box">
-                <a href="#">
-                    <div class="section-stuff-content">
-                        <img src="https://s.yimg.com/zp/MerchandiseImages/7AEA34653A-SP-7471103.jpg" alt="">
-                        <h2 class="section-stuff-heading">FOR NAME</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse sed deleniti, perferendis
-                            repellat.
-                        </p>
-                    </div>
-                </a>
-            </div>
-            <div class="section-stuff-box">
-                <a href="#">
-                    <div class="section-stuff-content">
-                        <img src="https://s.yimg.com/zp/MerchandiseImages/7AEA34653A-SP-7471103.jpg" alt="">
-                        <h2 class="section-stuff-heading">FOR NAME</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse sed deleniti, perferendis
-                            repellat.
-                        </p>
+                        <img :src="picLink" alt="">
+                        <h2 class="section-stuff-heading">{{ name }}</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur. Esse sed deleniti, maxime perferendis repellat.</p>
                     </div>
                 </a>
             </div>
@@ -232,7 +134,9 @@
             <div class="footer-box-form"></div>
         </div>
     </footer>
-
+<script src="./js/scroll.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.39/vue.global.js' integrity='sha512-Fn/oaEKWGs2ex37fcbyyVTtvvSUd4/7Mjj7zwrvw+QLyR0Wj3utVl+OMiyN84ky6TC5UHvifcdnWEL7N8gLNdg==' crossorigin='anonymous'></script>
+<script src="./js/app.js"></script>
 </body>
 
 </html>
