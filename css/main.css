@@ -71,10 +71,14 @@ li {
 }
 
 .title {
+  height: 65rem;
+  width: 100%;
+}
+.title-bg {
   background: url("https://images.pexels.com/photos/2356059/pexels-photo-2356059.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   background-size: cover;
-  background-position: 50% 27%;
-  height: 50rem;
+  background-position: 50% 30%;
+  height: 70rem;
   width: 100%;
   position: absolute;
   top: 0;
@@ -83,7 +87,7 @@ li {
 .title-content {
   background-color: #fff;
   width: 50%;
-  height: 50%;
+  height: 45%;
   padding: 3rem;
   position: relative;
   top: 75%;
@@ -121,7 +125,7 @@ li {
 }
 
 .cetagory {
-  margin-top: 55rem;
+  margin-top: 15rem;
   padding-left: 20rem;
   display: flex;
   flex-direction: row;
