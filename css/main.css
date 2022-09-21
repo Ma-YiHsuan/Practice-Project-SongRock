@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *,
 *::before,
 *::after {
@@ -34,25 +35,52 @@ li {
   z-index: 5;
 }
 
-.navChange {
-  background-color: #000 !important;
-}
-.navChange-logo {
-  fill: #fff !important;
-}
-.navChange-item:not(:last-child) {
-  color: #fff !important;
+/*負責navBar顏色配置與轉換*/
+.navbgTransp {
+  background-color: transparent;
 }
 
+.itemBlk {
+  color: #000;
+  transition: color 0.5s ease-out;
+}
+.itemBlk:hover {
+  color: #D9321B;
+}
+
+.itemOrg {
+  color: #FAA619;
+  transition: color 0.5s ease-out;
+}
+.itemOrg:hover {
+  color: #d68f13;
+}
+
+.navbgBlk {
+  background-color: #000;
+}
+
+.itemWhite {
+  color: #fff;
+  transition: color 0.5s ease-out;
+}
+.itemWhite:hover {
+  color: #D9321B;
+}
+
+/*配置結束*/
 .navigate {
   padding: 0 1em 0 2em;
-  background-color: transparent;
   display: flex;
   justify-content: space-between;
 }
 .navigate-logo {
   width: 13.5rem;
   fill: #000;
+}
+.navigate-logoW {
+  width: 13.5rem;
+  fill: #fff;
 }
 .navigate-list {
   display: inline-block;
@@ -61,23 +89,14 @@ li {
 }
 .navigate-item {
   display: inline-block;
-  color: #FAA619;
   font-size: 1.6rem;
-  font-weight: 500;
+  font-weight: 700;
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 3px;
-  transition: all 0.5s ease-out;
-}
-.navigate-item:hover {
-  color: #d68f13;
 }
 .navigate-item:not(:last-child) {
-  color: #000;
   margin-right: 3rem;
-}
-.navigate-item:not(:last-child):hover {
-  color: #D9321B;
 }
 
 .title {

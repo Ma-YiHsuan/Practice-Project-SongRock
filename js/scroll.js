@@ -1,28 +1,28 @@
 const navBar = document.querySelector('#nav');
 const navLogo = document.querySelector('#navLogo');
-const navItems = document.querySelectorAll('.navigate-item');
-const titleContent = document.querySelector('#titleContent');
-let titConTop = titleContent.getBoundingClientRect().top;
+const navItems = document.querySelectorAll('#navItem');
 
+function changeClass(target, oldClass, newClass) {
+	target.classList.remove(oldClass);
+	target.classList.add(newClass);
+}
+
+let scrollPos = 0;
 function scrollDown() {
-	if (titConTop <= 0) {
-		if (!navBar.classList.contains('navChange')) {
-			navBar.classList.add('navChange');
-			navLogo.classList.add('navChange-logo');
-			navItems.forEach((item) => {
-				item.classList.add('navChange-item');
-			});
-		}
-	} else if (titConTop > 0) {
-		if (navBar.classList.contains('navChange')) {
-			navBar.classList.remove('navChange');
-			navLogo.classList.remove('navChange-logo');
-			navItems.forEach((item) => {
-				item.classList.remove('navChange-item');
-			});
-		}
+	scrollPos = document.body.getBoundingClientRect().top;
+	if (scrollPos < 0) {
+		changeClass(navBar, 'navbgTransp', 'navbgBlk');
+		changeClass(navLogo, 'navigate-logo', 'navigate-logoW');
+		navItems.forEach((item) => {
+			changeClass(item, 'itemBlk', 'itemWhite');
+		});
+	} else if (scrollPos === 0) {
+		changeClass(navBar, 'navbgBlk', 'navbgTransp');
+		changeClass(navLogo, 'navigate-logoW', 'navigate-logo');
+		navItems.forEach((item) => {
+			changeClass(item, 'itemWhite', 'itemBlk');
+		});
 	}
-	titConTop = titleContent.getBoundingClientRect().top;
 }
 
 window.addEventListener('scroll', scrollDown);

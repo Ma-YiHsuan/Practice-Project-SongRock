@@ -4,29 +4,55 @@
 	z-index: 5;
 }
 
-.navChange {
-	background-color: $colorBlack !important;
+/*負責navBar顏色配置與轉換*/
+.navbgTransp {
+	background-color: transparent;
+}
 
-	&-logo {
-		fill: $colorWhite !important;
-	}
-
-	&-item {
-		&:not(:last-child) {
-			color: $colorWhite !important;
-		}
+.itemBlk {
+	color: $colorBlack;
+	transition: color 0.5s ease-out;
+	&:hover {
+		color: $colorRed-light;
 	}
 }
 
+.itemOrg {
+	color: $colorOrg;
+	transition: color 0.5s ease-out;
+	&:hover {
+		color: $colorOrg-dark;
+	}
+}
+
+.navbgBlk {
+	background-color: $colorBlack;
+}
+
+.itemWhite {
+	color: $colorWhite;
+	transition: color 0.5s ease-out;
+	&:hover {
+		color: $colorRed-light;
+	}
+}
+
+/*配置結束*/
+
 .navigate {
 	padding: 0 1em 0 2em;
-	background-color: transparent;
+
 	display: flex;
 	justify-content: space-between;
 
 	&-logo {
 		width: 13.5rem;
 		fill: $colorBlack;
+	}
+
+	&-logoW {
+		width: 13.5rem;
+		fill: $colorWhite;
 	}
 
 	&-list {
@@ -37,25 +63,14 @@
 
 	&-item {
 		display: inline-block;
-		color: $colorOrg;
 		font-size: $fontSize-default;
-		font-weight: 500;
+		font-weight: 700;
 		text-transform: uppercase;
 		text-align: center;
 		letter-spacing: 3px;
-		transition: all 0.5s ease-out;
-
-		&:hover {
-			color: $colorOrg-dark;
-		}
 
 		&:not(:last-child) {
-			color: $colorBlack;
 			margin-right: 3rem;
-		}
-
-		&:not(:last-child):hover {
-			color: $colorRed-light;
 		}
 	}
 }
