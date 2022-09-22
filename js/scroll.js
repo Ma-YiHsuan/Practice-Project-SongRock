@@ -1,28 +1,51 @@
-const navBar = document.querySelector('#nav');
-const navLogo = document.querySelector('#navLogo');
-const navItems = document.querySelectorAll('#navItem');
-
-function changeClass(target, oldClass, newClass) {
-	target.classList.remove(oldClass);
-	target.classList.add(newClass);
-}
-
-let scrollPos = 0;
-function scrollDown() {
-	scrollPos = document.body.getBoundingClientRect().top;
-	if (scrollPos < 0) {
-		changeClass(navBar, 'navbgTransp', 'navbgBlk');
-		changeClass(navLogo, 'navigate-logo', 'navigate-logoW');
-		navItems.forEach((item) => {
-			changeClass(item, 'itemBlk', 'itemWhite');
-		});
-	} else if (scrollPos === 0) {
-		changeClass(navBar, 'navbgBlk', 'navbgTransp');
-		changeClass(navLogo, 'navigate-logoW', 'navigate-logo');
-		navItems.forEach((item) => {
-			changeClass(item, 'itemWhite', 'itemBlk');
-		});
-	}
-}
-
-window.addEventListener('scroll', scrollDown);
+Vue.createApp({
+	data() {
+		return {
+			navlist: ['new', 'procduct', 'ppe inspection', 'tech info', 'poygon', 'climbing'],
+			isOntop: true,
+			isDown: false,
+			scrollPos: 0,
+		};
+	},
+	computed: {
+		itemColor() {
+			return {
+				itemBlk: this.isOntop,
+				itemWhite: this.isDown,
+			};
+		},
+		navColor() {
+			return {
+				navbgTransp: this.isOntop,
+				navbgBlk: this.isDown,
+			};
+		},
+		logoColor() {
+			return {
+				'navigate-logo': this.isOntop,
+				'navigate-logoW': this.isDown,
+			};
+		},
+		iconColor() {
+			return {
+				iconBlk: this.isOntop,
+				iconWhite: this.isDown,
+			};
+		},
+	},
+	mounted() {
+		window.addEventListener('scroll', this.scrollDown, { passive: true });
+	},
+	methods: {
+		scrollDown() {
+			this.scrollPos = document.body.getBoundingClientRect().top;
+			if (this.scrollPos < 0) {
+				this.isOntop = false;
+				this.isDown = true;
+			} else if (this.scrollPos === 0) {
+				this.isOntop = true;
+				this.isDown = false;
+			}
+		},
+	},
+}).mount('#header');

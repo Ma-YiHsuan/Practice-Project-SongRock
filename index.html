@@ -15,9 +15,9 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="navigate navbgTransp" id="nav">
-            <div class="navigate-logo" id="navLogo">
+    <header class="header" id="header">
+        <div class="navigate" :class="navColor">
+            <div :class="logoColor">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 422.81 200">
                     <g id="Song">
                         <path
@@ -47,21 +47,22 @@
                     </g>
                 </svg>
             </div>
-            <nav>
-                <ul class="navigate-list">
-                    <li class="navigate-item"><a href="#" id="navItem" class="itemBlk">new</a></li>
-                    <li class="navigate-item"><a href="#" id="navItem" class="itemBlk">procduct</a></li>
-                    <li class="navigate-item"><a href="#" id="navItem" class="itemBlk">ppe inspection</a></li>
-                    <li class="navigate-item"><a href="#" id="navItem" class="itemBlk">tech info</a></li>
-                    <li class="navigate-item"><a href="#" id="navItem" class="itemBlk">poygon</a></li>
-                    <li class="navigate-item"><a href="#" class="itemOrg">&frasl; climbing</a></li>
-                </ul>
-            </nav>
+            <ul class="navigate-list">
+                <template v-for="(item, index) of navlist" :key="index">
+                    <li class="navigate-item" v-if="(index + 1) === navlist.length">
+                        <a href="#" class="itemOrg" v-cloak>/{{ item }}</a>
+                    </li>
+                    <li class="navigate-item" v-else >
+                        <a href="#" :class="itemColor" v-cloak>{{ item }}</a>
+                    </li>
+                </template>
+            </ul>
             <div class="navigate-form">
-                <form action="nothing">
+                <!-- <form>
                     <input type="text" placeholder="write something">
                     <button>search</button>
-                </form>
+                </form> -->
+                <span class="dli-search" :class="iconColor"></span>
             </div>
         </div>
     </header>
@@ -134,9 +135,11 @@
             <div class="footer-box-form"></div>
         </div>
     </footer>
-<script src="./js/scroll.js"></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.39/vue.global.js' integrity='sha512-Fn/oaEKWGs2ex37fcbyyVTtvvSUd4/7Mjj7zwrvw+QLyR0Wj3utVl+OMiyN84ky6TC5UHvifcdnWEL7N8gLNdg==' crossorigin='anonymous'></script>
-<script src="./js/app.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.39/vue.global.js'
+        integrity='sha512-Fn/oaEKWGs2ex37fcbyyVTtvvSUd4/7Mjj7zwrvw+QLyR0Wj3utVl+OMiyN84ky6TC5UHvifcdnWEL7N8gLNdg=='
+        crossorigin='anonymous'></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/scroll.js"></script>
 </body>
 
 </html>
