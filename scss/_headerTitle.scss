@@ -6,7 +6,7 @@
 
 /*負責navBar顏色配置與轉換*/
 .navbgTransp {
-	background-color: transparent;
+	background-color: rgba(0, 0, 0, 0);
 }
 
 .itemBlk {
@@ -37,11 +37,28 @@
 	}
 }
 
+.iconBlk {
+	color: $colorBlack;
+	transition: color 0.5s ease-out;
+	&:hover {
+		color: $colorOrg;
+		cursor: pointer;
+	}
+}
+
+.iconWhite {
+	color: $colorWhite;
+	transition: color 0.5s ease-out;
+	&:hover {
+		color: $colorOrg;
+		cursor: pointer;
+	}
+}
+
 /*配置結束*/
 
 .navigate {
-	padding: 0 1em 0 2em;
-
+	padding: 0 2rem;
 	display: flex;
 	justify-content: space-between;
 
@@ -72,6 +89,11 @@
 		&:not(:last-child) {
 			margin-right: 3rem;
 		}
+	}
+
+	&-form {
+		font-size: 2.5rem;
+		padding: 0.5rem 0;
 	}
 }
 
@@ -134,4 +156,31 @@
 			text-decoration: underline;
 		}
 	}
+}
+
+//https://design-library.jp/lab/icons-search 放大鏡icon
+
+.dli-search {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 1;
+	width: 0.7em;
+	height: 0.7em;
+	border: 0.1em solid currentColor;
+	border-radius: 50%;
+	box-sizing: content-box;
+	position: relative;
+}
+
+.dli-search::before {
+	content: '';
+	position: absolute;
+	top: calc(85.35534% + 0.07071em);
+	left: calc(85.35534% + 0.07071em);
+	width: 0.336em;
+	height: 0.1em;
+	background: currentColor;
+	border-radius: 0 0.1em 0.1em 0;
+	transform: translateY(-50%) rotate(45deg);
+	transform-origin: left center;
 }

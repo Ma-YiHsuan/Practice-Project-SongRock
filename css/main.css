@@ -28,6 +28,10 @@ li {
   list-style: none;
 }
 
+[v-cloak] {
+  display: none;
+}
+
 .header {
   position: -webkit-sticky;
   position: sticky;
@@ -37,7 +41,7 @@ li {
 
 /*負責navBar顏色配置與轉換*/
 .navbgTransp {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .itemBlk {
@@ -68,9 +72,27 @@ li {
   color: #D9321B;
 }
 
+.iconBlk {
+  color: #000;
+  transition: color 0.5s ease-out;
+}
+.iconBlk:hover {
+  color: #FAA619;
+  cursor: pointer;
+}
+
+.iconWhite {
+  color: #fff;
+  transition: color 0.5s ease-out;
+}
+.iconWhite:hover {
+  color: #FAA619;
+  cursor: pointer;
+}
+
 /*配置結束*/
 .navigate {
-  padding: 0 1em 0 2em;
+  padding: 0 2rem;
   display: flex;
   justify-content: space-between;
 }
@@ -97,6 +119,10 @@ li {
 }
 .navigate-item:not(:last-child) {
   margin-right: 3rem;
+}
+.navigate-form {
+  font-size: 2.5rem;
+  padding: 0.5rem 0;
 }
 
 .title {
@@ -151,6 +177,31 @@ li {
 }
 .title-item > a:hover {
   text-decoration: underline;
+}
+
+.dli-search {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+  width: 0.7em;
+  height: 0.7em;
+  border: 0.1em solid currentColor;
+  border-radius: 50%;
+  box-sizing: content-box;
+  position: relative;
+}
+
+.dli-search::before {
+  content: "";
+  position: absolute;
+  top: calc(85.35534% + 0.07071em);
+  left: calc(85.35534% + 0.07071em);
+  width: 0.336em;
+  height: 0.1em;
+  background: currentColor;
+  border-radius: 0 0.1em 0.1em 0;
+  transform: translateY(-50%) rotate(45deg);
+  transform-origin: left center;
 }
 
 .cetagory {
