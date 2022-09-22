@@ -1,13 +1,13 @@
 *,
 *::before,
 *::after {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 }
 
 html {
-    font-size: 62.5%;
+	font-size: 62.5%;
 }
 
 body {
@@ -16,13 +16,17 @@ body {
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    outline: unset;
+	text-decoration: none;
+	color: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	outline: unset;
 }
 
 li {
-    list-style: none;
+	list-style: none;
+}
+
+[v-cloak] {
+	display: none;
 }
