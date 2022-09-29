@@ -58,11 +58,10 @@
                 </template>
             </ul>
             <div class="navigate-form">
-                <!-- <form>
-                    <input type="text" placeholder="write something">
-                    <button>search</button>
-                </form> -->
-                <span class="dli-search" :class="iconColor"></span>
+                <form>
+                    <input type="text" placeholder="search something..." v-show="isShow" @blur="hiddenSearch">
+                    <span class="dli-search" :class="iconColor" @click="showSearch"></span>
+                </form>
             </div>
         </div>
     </header>
@@ -139,7 +138,7 @@
         integrity='sha512-Fn/oaEKWGs2ex37fcbyyVTtvvSUd4/7Mjj7zwrvw+QLyR0Wj3utVl+OMiyN84ky6TC5UHvifcdnWEL7N8gLNdg=='
         crossorigin='anonymous'></script>
     <script src="./js/app.js"></script>
-    <script src="./js/scroll.js"></script>
+    <script src="./js/header.js"></script>
 </body>
 
 </html>

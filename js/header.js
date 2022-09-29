@@ -5,6 +5,7 @@ Vue.createApp({
 			isOntop: true,
 			isDown: false,
 			scrollPos: 0,
+			isShow: false,
 		};
 	},
 	computed: {
@@ -46,6 +47,12 @@ Vue.createApp({
 				this.isOntop = true;
 				this.isDown = false;
 			}
+		},
+		showSearch() {
+			this.isShow = true;
+		},
+		hiddenSearch() {
+			this.isShow = false;
 		},
 	},
 }).mount('#header');
