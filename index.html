@@ -59,7 +59,7 @@
             </ul>
             <div class="navigate-form">
                 <form>
-                    <input type="text" placeholder="search something..." v-show="isShow" @blur="hiddenSearch">
+                    <input type="text" placeholder="search something..." class="navigate-input" v-show="isShow" @blur="hiddenSearch">
                     <span class="dli-search" :class="iconColor" @focus="showSearch" @blur="hiddenSearch" tabindex="0"></span>
                 </form>
             </div>

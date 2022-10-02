@@ -92,8 +92,24 @@
 	}
 
 	&-form {
+		width: 22rem;
+		text-align: right;
 		font-size: 2.5rem;
 		padding: 0.5rem 0;
+	}
+
+	&-input {
+		text-align: left;
+		margin-right: 0.5rem;
+		border: none;
+		height: 3rem;
+		padding: 0.5rem;
+
+		&:focus {
+			outline: none;
+			border-top: 2px solid $colorWhite;
+			border-bottom: 3.5px solid $colorOrg;
+		}
 	}
 }
 
@@ -162,6 +178,7 @@
 
 .dli-search {
 	display: inline-block;
+	margin-right: 1rem;
 	vertical-align: middle;
 	line-height: 1;
 	width: 0.7em;
