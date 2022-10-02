@@ -51,8 +51,10 @@ Vue.createApp({
 		showSearch() {
 			this.isShow = true;
 		},
-		hiddenSearch() {
-			this.isShow = false;
+		hiddenSearch(evt) {
+			if (!evt.relatedTarget) {
+				this.isShow = false;
+			}
 		},
 	},
 }).mount('#header');
