@@ -15,9 +15,9 @@
 </head>
 
 <body>
-    <header class="header" id="header">
-        <div class="navigate" :class="navColor">
-            <div :class="logoColor">
+    <div id="app">
+        <header-comp>
+            <template v-slot:logosvg>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 422.81 200">
                     <g id="Song">
                         <path
@@ -46,99 +46,80 @@
                             style="fill:#231815" />
                     </g>
                 </svg>
-            </div>
-            <ul class="navigate-list">
-                <template v-for="(item, index) of navlist" :key="index">
-                    <li class="navigate-item" v-if="(index + 1) === navlist.length">
-                        <a href="#" class="itemOrg" v-cloak>/{{ item }}</a>
-                    </li>
-                    <li class="navigate-item" v-else >
-                        <a href="#" :class="itemColor" v-cloak>{{ item }}</a>
-                    </li>
-                </template>
-            </ul>
-            <div class="navigate-form">
-                <form>
-                    <input type="text" placeholder="search something..." class="navigate-input" v-show="isShow" @blur="hiddenSearch">
-                    <span class="dli-search" :class="iconColor" @focus="showSearch" @blur="hiddenSearch" tabindex="0"></span>
-                </form>
-            </div>
-        </div>
-    </header>
+            </template>
+        </header-comp>
 
-    <main>
-        <section class="title">
-            <div class="title-bg"></div>
-            <div class="title-content">
-                <h1 class="title-heading">Procducts</h1>
-                <div class="title-item">
-                    <a href="#">Home</a>
+        <main>
+            <section class="title">
+                <div class="title-bg"></div>
+                <div class="title-content">
+                    <h1 class="title-heading">Procducts</h1>
+                    <div class="title-item">
+                        <a href="#">Home</a>
+                    </div>
+                    <div class="title-item">
+                        <a href="#">Professional</a>
+                    </div>
+                    <div class="title-item">
+                        <a href="#">Harnesses</a>
+                    </div>
+                    <div class="title-item">
+                        <a href="#">Other</a>
+                    </div>
+                    <p>Practical accessories for professional harnesses.</p>
                 </div>
-                <div class="title-item">
-                    <a href="#">Professional</a>
-                </div>
-                <div class="title-item">
-                    <a href="#">Harnesses</a>
-                </div>
-                <div class="title-item">
-                    <a href="#">Other</a>
-                </div>
-                <p>Practical accessories for professional harnesses.</p>
-            </div>
-        </section>
-        <div class="cetagory">
-            <a href="#">
-                <div class="cetagory-box">
-                    <img src="imge/LOGO.jpg" alt="a picture">
-                    <p>Positioning</p>
-                </div>
-            </a>
-            <a href="#">
-                <div class="cetagory-box">
-                    <img src="imge/LOGO.jpg" alt="a picture">
-                    <p>Fall arrest</p>
-                </div>
-            </a>
-            <a href="#">
-                <div class="cetagory-box">
-                    <img src="imge/LOGO.jpg" alt="a picture">
-                    <p>Rescue</p>
-                </div>
-            </a>
-            <a href="#">
-                <div class="cetagory-box">
-                    <img src="imge/LOGO.jpg" alt="a picture">
-                    <p>Chest harnesses</p>
-                </div>
-            </a>
-        </div>
-        <section class="section-stuff" id="stuffs">
-            <div class="section-stuff-box" v-for="n in amount">
+            </section>
+            <div class="cetagory">
                 <a href="#">
-                    <div class="section-stuff-content">
-                        <img :src="picLink" alt="">
-                        <h2 class="section-stuff-heading">{{ name }}</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur. Esse sed deleniti, maxime perferendis repellat.</p>
+                    <div class="cetagory-box">
+                        <img src="imge/LOGO.jpg" alt="a picture">
+                        <p>Positioning</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="cetagory-box">
+                        <img src="imge/LOGO.jpg" alt="a picture">
+                        <p>Fall arrest</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="cetagory-box">
+                        <img src="imge/LOGO.jpg" alt="a picture">
+                        <p>Rescue</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="cetagory-box">
+                        <img src="imge/LOGO.jpg" alt="a picture">
+                        <p>Chest harnesses</p>
                     </div>
                 </a>
             </div>
-        </section>
-    </main>
+            <section class="section-stuff">
+                <div class="section-stuff-box" v-for="n in amount">
+                    <a href="#">
+                        <div class="section-stuff-content">
+                            <img :src="picLink" alt="">
+                            <h2 class="section-stuff-heading">{{ name }}</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur. Esse sed deleniti, maxime perferendis repellat.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </main>
 
-    <footer>
-        <div class="footer-box">
-            <div class="footer-box-conpany">
-                <h3>company</h3>
+        <footer>
+            <div class="footer-box">
+                <div class="footer-box-conpany">
+                    <h3>company</h3>
+                </div>
+                <div class="footer-box-download"></div>
+                <div class="footer-box-form"></div>
             </div>
-            <div class="footer-box-download"></div>
-            <div class="footer-box-form"></div>
-        </div>
-    </footer>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.39/vue.global.js'
-        integrity='sha512-Fn/oaEKWGs2ex37fcbyyVTtvvSUd4/7Mjj7zwrvw+QLyR0Wj3utVl+OMiyN84ky6TC5UHvifcdnWEL7N8gLNdg=='
-        crossorigin='anonymous'></script>
-    <script src="./js/app.js"></script>
-    <script src="./js/header.js"></script>
+        </footer>
+    </div>
+    <script type="module" src="./js/app.js"></script>
 </body>
 
 </html>

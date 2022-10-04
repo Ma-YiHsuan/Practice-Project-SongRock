@@ -1,4 +1,4 @@
-Vue.createApp({
+export const headerComponent = {
 	data() {
 		return {
 			navlist: ['new', 'procduct', 'ppe inspection', 'tech info', 'poygon', 'climbing'],
@@ -8,6 +8,33 @@ Vue.createApp({
 			isShow: false,
 		};
 	},
+	template: `
+	<header class="header">
+            <div class="navigate" :class="navColor">
+                <div :class="logoColor">
+                    <slot name="logosvg"></slot>
+                </div>
+                <ul class="navigate-list">
+                    <template v-for="(item, index) of navlist" :key="index">
+                        <li class="navigate-item" v-if="(index + 1) === navlist.length">
+                            <a href="#" class="itemOrg" v-cloak>/{{ item }}</a>
+                        </li>
+                        <li class="navigate-item" v-else>
+                            <a href="#" :class="itemColor" v-cloak>{{ item }}</a>
+                        </li>
+                    </template>
+                </ul>
+                <div class="navigate-form">
+                    <form>
+                        <input type="text" placeholder="search something..." class="navigate-input" v-show="isShow"
+                            @blur="hiddenSearch">
+                        <span class="dli-search" :class="iconColor" @focus="showSearch" @blur="hiddenSearch"
+                            tabindex="0"></span>
+                    </form>
+                </div>
+            </div>
+        </header>
+	`,
 	computed: {
 		itemColor() {
 			return {
@@ -57,4 +84,4 @@ Vue.createApp({
 			}
 		},
 	},
-}).mount('#header');
+};
