@@ -7,6 +7,7 @@
     <meta name="viewport" section-stuff-content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="page-cs.css"> -->
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="shortcut icon" href="imge/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -120,6 +121,15 @@
                 <div class="footer-box-form">
                     <h3 v-cloak>{{ 'newsletter'.toUpperCase() }}</h3>
                     <p>Make sure you never miss any offers or events.</p>
+                    <form class="footer-box-form--content">
+                        <input type="email" placeholder="your@email" class="footer-box-form--email">
+                        <button class="footer-box-form--button">SUBSCRIBE</button>
+                    </form>
+                    <div class="footer-box-form--content">
+                        <input type="checkbox" id="checkbox" class="footer-box-form--checkbox">
+                        <span class="material-icons style">done</span>
+                        <label for="checkbox">I agree to <a href="#">the processing of personal data.</a></label>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">

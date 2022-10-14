@@ -7,6 +7,17 @@
 	}
 }
 
+@mixin checkboxPos {
+	content: '';
+	position: absolute;
+	top: -1px;
+	height: 2rem;
+	width: 2rem;
+	background-color: transparent;
+	z-index: 3;
+	visibility: visible;
+}
+
 .footer {
 	&-box {
 		display: flex;
@@ -34,6 +45,77 @@
 			display: inline-block;
 			font-size: $fontSize-small;
 			@include footerH3;
+
+			&--content {
+				margin-top: 2rem;
+				position: relative;
+
+				a:hover {
+					text-decoration: underline;
+				}
+			}
+
+			&--email {
+				height: 5rem;
+				width: 40rem;
+				padding: 2rem;
+				border: none;
+				background-color: #f1f1f1;
+
+				&:focus {
+					outline: none;
+					border-bottom: 3.5px solid $colorOrg;
+				}
+			}
+
+			&--button {
+				position: absolute;
+				right: 0;
+				font-weight: 700;
+				padding: 1.55rem;
+				color: $colorOrg;
+				border: 2px solid $colorOrg;
+				background-color: $colorWhite;
+				cursor: pointer;
+				transition: all 0.5s;
+
+				&:hover {
+					color: $colorBlack;
+					background-color: $colorOrg;
+				}
+			}
+
+			&--checkbox {
+				display: inline-block;
+				position: relative;
+				margin-right: 1.5rem;
+				cursor: pointer;
+				visibility: hidden;
+
+				&::after {
+					@include checkboxPos;
+					border: 1px solid $colorGry;
+				}
+				&:hover::after {
+					border: 1px solid $colorOrg;
+				}
+				&:checked::after {
+					@include checkboxPos;
+					border: 1px solid $colorOrg;
+				}
+				&:checked + .material-icons.style {
+					visibility: visible;
+				}
+			}
+
+			.material-icons.style {
+				position: absolute;
+				left: 1px;
+				font-size: 1.8rem;
+				color: $colorOrg;
+				z-index: 1;
+				visibility: hidden;
+			}
 		}
 	}
 

@@ -322,6 +322,82 @@ li {
   margin-bottom: 1.5rem;
   letter-spacing: 2px;
 }
+.footer-box-form--content {
+  margin-top: 2rem;
+  position: relative;
+}
+.footer-box-form--content a:hover {
+  text-decoration: underline;
+}
+.footer-box-form--email {
+  height: 5rem;
+  width: 40rem;
+  padding: 2rem;
+  border: none;
+  background-color: #f1f1f1;
+}
+.footer-box-form--email:focus {
+  outline: none;
+  border-bottom: 3.5px solid #faa619;
+}
+.footer-box-form--button {
+  position: absolute;
+  right: 0;
+  font-weight: 700;
+  padding: 1.55rem;
+  color: #faa619;
+  border: 2px solid #faa619;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.footer-box-form--button:hover {
+  color: #000;
+  background-color: #faa619;
+}
+.footer-box-form--checkbox {
+  display: inline-block;
+  position: relative;
+  margin-right: 1.5rem;
+  cursor: pointer;
+  visibility: hidden;
+}
+.footer-box-form--checkbox::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  height: 2rem;
+  width: 2rem;
+  background-color: transparent;
+  z-index: 3;
+  visibility: visible;
+  border: 1px solid #c9c9c9;
+}
+.footer-box-form--checkbox:hover::after {
+  border: 1px solid #faa619;
+}
+.footer-box-form--checkbox:checked::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  height: 2rem;
+  width: 2rem;
+  background-color: transparent;
+  z-index: 3;
+  visibility: visible;
+  border: 1px solid #faa619;
+}
+.footer-box-form--checkbox:checked + .material-icons.style {
+  visibility: visible;
+}
+.footer-box-form .material-icons.style {
+  position: absolute;
+  left: 1px;
+  font-size: 1.8rem;
+  color: #faa619;
+  z-index: 1;
+  visibility: hidden;
+}
 .footer-bottom {
   height: 12rem;
   padding: 2rem 20rem;
