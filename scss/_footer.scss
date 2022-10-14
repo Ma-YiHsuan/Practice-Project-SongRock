@@ -1,0 +1,78 @@
+@mixin footerH3 {
+	h3 {
+		font-size: $fontSize-small;
+		font-weight: 700;
+		margin-bottom: 1.5rem;
+		letter-spacing: 2px;
+	}
+}
+
+.footer {
+	&-box {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		padding: 5rem 0;
+		border-top: 1px solid $colorGry;
+
+		&-lists {
+			display: inline-block;
+			margin-right: 25rem;
+			font-size: $fontSize-small;
+			@include footerH3;
+
+			li:not(:last-child) {
+				margin-bottom: 1rem;
+			}
+
+			a:hover {
+				text-decoration: underline;
+			}
+		}
+
+		&-form {
+			display: inline-block;
+			font-size: $fontSize-small;
+			@include footerH3;
+		}
+	}
+
+	&-bottom {
+		height: 12rem;
+		padding: 2rem 20rem;
+		background-color: $colorBlack;
+
+		&--logo {
+			float: right;
+			fill: $colorWhite;
+			width: 17rem;
+			height: 8rem;
+			cursor: pointer;
+			filter: grayscale(100%);
+			transition: filter 0.5s;
+
+			&:hover {
+				filter: grayscale(0);
+			}
+		}
+
+		&--copy {
+			display: inline-block;
+			height: 8rem;
+			padding: 3.2rem 0;
+			font-size: $fontSize-small;
+			font-weight: 500;
+			color: $colorGry;
+
+			> a {
+				padding-left: 3rem;
+				color: $colorOrg;
+				transition: color 0.3s;
+
+				&:hover {
+					color: $colorWhite;
+				}
+			}
+		}
+	}
+}

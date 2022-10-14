@@ -7,7 +7,31 @@ const app = createApp({
 			picLink: 'https://s.yimg.com/zp/MerchandiseImages/7AEA34653A-SP-7471103.jpg',
 			name: 'Stuff Name',
 			amount: 10,
+			footerLists: [
+				{
+					title: 'company',
+					contents: ['About Us', 'Staff', 'Jobs', 'History', 'Supports', 'Quality Management', 'Recall Info'],
+				},
+				{
+					title: 'download',
+					contents: [
+						'Catalogues',
+						'PPE Inspection',
+						'EU Declarations of Conformity',
+						'Logotype',
+						'Terms of sale',
+						'Terms of sale of POLYGON',
+					],
+				},
+			],
 		};
+	},
+	computed: {
+		titleLists() {
+			return this.footerLists.map((item) => {
+				return item.title.toUpperCase();
+			});
+		},
 	},
 });
 
