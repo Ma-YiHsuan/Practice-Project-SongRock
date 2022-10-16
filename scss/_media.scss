@@ -1,0 +1,40 @@
+// 760    phone
+// 980    exsmall
+// 1165   small
+// 1330   middle
+// 1510   big
+// 1690   large
+// 1690+  設計初
+
+@mixin respon($breakpoint) {
+	@if $breakpoint == phone {
+		@media (max-width: 760px) {
+			@content;
+		}
+	}
+	@if $breakpoint == exsmall {
+		@media (max-width: 980px) {
+			@content;
+		}
+	}
+	@if $breakpoint == small {
+		@media (max-width: 1165px) {
+			@content;
+		}
+	}
+	@if $breakpoint == middle {
+		@media (max-width: 1330px) {
+			@content;
+		}
+	}
+	@if $breakpoint == big {
+		@media (max-width: 1510px) {
+			@content;
+		}
+	}
+	@if $breakpoint == large {
+		@media (max-width: 1690px) {
+			@content;
+		}
+	}
+}

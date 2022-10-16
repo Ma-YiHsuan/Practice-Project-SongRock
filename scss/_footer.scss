@@ -16,6 +16,15 @@
 	background-color: transparent;
 	z-index: 3;
 	visibility: visible;
+
+	@include respon(middle) {
+		height: 2.5rem;
+		width: 2.5rem;
+	}
+	@include respon(exsmall) {
+		height: 3rem;
+		width: 3rem;
+	}
 }
 
 .footer {
@@ -26,14 +35,44 @@
 		padding: 5rem 0;
 		border-top: 1px solid $colorGry;
 
+		@include respon(middle) {
+			padding: 5rem 10rem;
+			justify-content: flex-start;
+			flex-wrap: wrap;
+		}
+		@include respon(exsmall) {
+			padding: 8rem 20rem;
+			justify-content: center;
+		}
+		@include respon(phone) {
+			justify-content: flex-start;
+		}
+
 		&-lists {
 			display: inline-block;
 			margin-right: 25rem;
 			font-size: $fontSize-small;
 			@include footerH3;
 
+			@include respon(middle) {
+				margin-right: 20rem;
+			}
+			@include respon(small) {
+				margin-right: 15rem;
+			}
+			@include respon(exsmall) {
+				margin-right: 0;
+				margin-bottom: 10rem;
+				&:nth-of-type(1) {
+					margin-right: 15%;
+				}
+			}
+
 			li:not(:last-child) {
 				margin-bottom: 1rem;
+				@include respon(exsmall) {
+					margin-bottom: 2rem;
+				}
 			}
 
 			a:hover {
@@ -44,7 +83,15 @@
 		&-form {
 			display: inline-block;
 			font-size: $fontSize-small;
+			width: 50rem;
 			@include footerH3;
+
+			@include respon(small) {
+				width: 55rem;
+			}
+			@include respon(exsmall) {
+				width: 80rem;
+			}
 
 			&--content {
 				margin-top: 2rem;
@@ -65,6 +112,23 @@
 				&:focus {
 					outline: none;
 					border-bottom: 3.5px solid $colorOrg;
+				}
+
+				@include respon(large) {
+					height: 5.2rem;
+				}
+				@include respon(big) {
+					height: 5.5rem;
+				}
+				@include respon(middle) {
+					height: 5.8rem;
+				}
+				@include respon(small) {
+					height: 6.2rem;
+				}
+				@include respon(exsmall) {
+					width: 70rem;
+					height: 6.9rem;
 				}
 			}
 
@@ -115,6 +179,13 @@
 				color: $colorOrg;
 				z-index: 1;
 				visibility: hidden;
+
+				@include respon(middle) {
+					font-size: 2.2rem;
+				}
+				@include respon(exsmall) {
+					font-size: 2.8rem;
+				}
 			}
 		}
 	}
@@ -123,6 +194,17 @@
 		height: 12rem;
 		padding: 2rem 20rem;
 		background-color: $colorBlack;
+
+		@include respon(middle) {
+			padding: 2rem 10rem;
+		}
+		@include respon(phone) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 3rem 10rem;
+			height: 25rem;
+		}
 
 		&--logo {
 			float: right;
@@ -135,6 +217,15 @@
 
 			&:hover {
 				filter: grayscale(0);
+			}
+
+			@include respon(exsmall) {
+				width: 19rem;
+				height: 10rem;
+			}
+			@include respon(phone) {
+				width: 25rem;
+				margin-bottom: 2rem;
 			}
 		}
 
@@ -154,6 +245,13 @@
 				&:hover {
 					color: $colorWhite;
 				}
+			}
+			@include respon(exsmall) {
+				padding: 2.5rem 0;
+			}
+			@include respon(phone) {
+				height: 7rem;
+				padding: 2rem 0;
 			}
 		}
 	}

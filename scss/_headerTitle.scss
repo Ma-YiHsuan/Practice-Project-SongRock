@@ -117,6 +117,12 @@
 .title {
 	height: 65rem;
 	width: 100%;
+	@include respon(large) {
+		height: 50rem;
+	}
+	@include respon(exsmall) {
+		height: 45rem;
+	}
 
 	&-bg {
 		background: url('https://images.pexels.com/photos/2356059/pexels-photo-2356059.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
@@ -127,6 +133,10 @@
 		position: absolute;
 		top: 0;
 		z-index: -1;
+
+		@include respon(large) {
+			height: 60rem;
+		}
 	}
 
 	&-content {
@@ -139,6 +149,15 @@
 		left: 25%;
 		text-align: center;
 		z-index: 1;
+
+		@include respon(exsmall) {
+			width: 70%;
+			left: 15%;
+		}
+		@include respon(phone) {
+			width: 90%;
+			left: 5%;
+		}
 
 		> p {
 			margin-top: 2rem;

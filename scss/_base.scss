@@ -7,7 +7,23 @@
 }
 
 html {
-	font-size: 62.5%;
+	font-size: 62.5%; //1rem = 10px
+
+	@include respon(large) {
+		font-size: 56.25%; //1rem = 9px
+	}
+	@include respon(big) {
+		font-size: 50%; //1rem = 8px
+	}
+	@include respon(middle) {
+		font-size: 43.75%; //1rem = 7px
+	}
+	@include respon(small) {
+		font-size: 37.5%; //1rem = 6px
+	}
+	@include respon(exsmall) {
+		font-size: 31.25%; //1rem = 5px
+	}
 }
 
 body {
