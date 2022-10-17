@@ -122,11 +122,6 @@ li {
 }
 @media (max-width: 80em) {
   .navigate-list {
-    margin-left: 5rem;
-  }
-}
-@media (max-width: 61.25em) {
-  .navigate-list {
     margin-left: 2rem;
   }
 }
@@ -141,7 +136,7 @@ li {
 .navigate-item:not(:last-child) {
   margin-right: 3rem;
 }
-@media (max-width: 61.25em) {
+@media (max-width: 80em) {
   .navigate-item:not(:last-child) {
     margin-right: 1rem;
   }
@@ -167,6 +162,16 @@ li {
   text-align: right;
   font-size: 2.5rem;
   padding: 1.5rem 0;
+}
+@media (max-width: 105.625em) {
+  .navigate-form {
+    width: 25rem;
+  }
+}
+@media (max-width: 80em) {
+  .navigate-form {
+    width: 30rem;
+  }
 }
 .navigate-input {
   text-align: left;

@@ -79,9 +79,6 @@
 		padding: 2rem 0;
 
 		@include respon(middle) {
-			margin-left: 5rem;
-		}
-		@include respon(small) {
 			margin-left: 2rem;
 		}
 	}
@@ -97,7 +94,7 @@
 		&:not(:last-child) {
 			margin-right: 3rem;
 
-			@include respon(small) {
+			@include respon(middle) {
 				margin-right: 1rem;
 			}
 		}
@@ -125,6 +122,13 @@
 		text-align: right;
 		font-size: 2.5rem;
 		padding: 1.5rem 0;
+
+		@include respon(large) {
+			width: 25rem;
+		}
+		@include respon(middle) {
+			width: 30rem;
+		}
 	}
 
 	&-input {
