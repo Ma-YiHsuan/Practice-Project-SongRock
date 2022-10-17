@@ -78,6 +78,9 @@
 		margin-left: 10rem;
 		padding: 2rem 0;
 
+		@include respon(middle) {
+			margin-left: 5rem;
+		}
 		@include respon(small) {
 			margin-left: 2rem;
 		}
@@ -99,16 +102,29 @@
 			}
 		}
 	}
+	/* https://design-library.jp/lab/icons-menu */
+	.dli-menu {
+		display: inline-block;
+		vertical-align: middle;
+		color: #333;
+		line-height: 1;
+		width: 1em;
+		> span {
+			display: block;
+			height: 0.1em;
+			background: currentColor;
+			border-radius: 0.1em;
+		}
+		> span + span {
+			margin-top: 0.22em;
+		}
+	}
 
 	&-form {
 		width: 22rem;
 		text-align: right;
 		font-size: 2.5rem;
 		padding: 1.5rem 0;
-
-		@include respon(small) {
-			width: 12rem;
-		}
 	}
 
 	&-input {
@@ -132,8 +148,11 @@
 	@include respon(large) {
 		height: 50rem;
 	}
+	@include respon(middle) {
+		height: 40rem;
+	}
 	@include respon(small) {
-		height: 45rem;
+		height: 30rem;
 	}
 
 	&-bg {
@@ -148,6 +167,12 @@
 
 		@include respon(large) {
 			height: 60rem;
+		}
+		@include respon(middle) {
+			height: 50rem;
+		}
+		@include respon(small) {
+			height: 40rem;
 		}
 	}
 
