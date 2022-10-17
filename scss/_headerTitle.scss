@@ -77,6 +77,10 @@
 		font-size: 0;
 		margin-left: 10rem;
 		padding: 2rem 0;
+
+		@include respon(small) {
+			margin-left: 2rem;
+		}
 	}
 
 	&-item {
@@ -89,6 +93,10 @@
 
 		&:not(:last-child) {
 			margin-right: 3rem;
+
+			@include respon(small) {
+				margin-right: 1rem;
+			}
 		}
 	}
 
@@ -97,6 +105,10 @@
 		text-align: right;
 		font-size: 2.5rem;
 		padding: 1.5rem 0;
+
+		@include respon(small) {
+			width: 12rem;
+		}
 	}
 
 	&-input {
@@ -120,7 +132,7 @@
 	@include respon(large) {
 		height: 50rem;
 	}
-	@include respon(exsmall) {
+	@include respon(small) {
 		height: 45rem;
 	}
 
@@ -150,14 +162,14 @@
 		text-align: center;
 		z-index: 1;
 
-		@include respon(exsmall) {
-			width: 70%;
-			left: 15%;
+		@include respon(small) {
+			width: 80%;
+			left: 10%;
 		}
-		@include respon(phone) {
-			width: 90%;
-			left: 5%;
-		}
+		// @include respon(phone) {
+		// 	width: 90%;
+		// 	left: 5%;
+		// }
 
 		> p {
 			margin-top: 2rem;

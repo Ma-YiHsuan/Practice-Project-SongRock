@@ -1,39 +1,27 @@
-// 760    phone
-// 980    exsmall
-// 1165   small
-// 1330   middle
-// 1510   big
+// 768    phone
+// 980    small
+// 1280   middle
 // 1690   large
 // 1690+  設計初
 
 @mixin respon($breakpoint) {
 	@if $breakpoint == phone {
-		@media (max-width: 760px) {
-			@content;
-		}
-	}
-	@if $breakpoint == exsmall {
-		@media (max-width: 980px) {
+		@media (max-width: 48em) {
 			@content;
 		}
 	}
 	@if $breakpoint == small {
-		@media (max-width: 1165px) {
+		@media (max-width: 61.25em) {
 			@content;
 		}
 	}
 	@if $breakpoint == middle {
-		@media (max-width: 1330px) {
-			@content;
-		}
-	}
-	@if $breakpoint == big {
-		@media (max-width: 1510px) {
+		@media (max-width: 80em) {
 			@content;
 		}
 	}
 	@if $breakpoint == large {
-		@media (max-width: 1690px) {
+		@media (max-width: 105.625em) {
 			@content;
 		}
 	}

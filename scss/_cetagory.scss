@@ -4,28 +4,28 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
+	flex-wrap: wrap;
 
-	@include respon(big) {
+	@include respon(large) {
 		padding-left: 15rem;
 	}
 	@include respon(middle) {
 		padding-left: 10rem;
 	}
-	@include respon(exsmall) {
-		flex-wrap: wrap;
+	@include respon(small) {
 		padding-left: 5rem;
 	}
 
 	> a {
 		&:not(:last-child) {
 			margin-right: 4rem;
-			@include respon(exsmall) {
+			@include respon(small) {
 				margin-bottom: 2rem;
 				margin-right: 2rem;
 			}
 		}
 
-		@include respon(phone) {
+		@include respon(small) {
 			width: calc(100% / 2 - 4.5rem);
 		}
 	}
@@ -53,8 +53,8 @@
 			filter: grayscale(100%);
 			transition: all 0.5s ease-out;
 
-			@include respon(exsmall) {
-				width: 15rem;
+			@include respon(small) {
+				width: 10rem;
 			}
 		}
 
@@ -63,8 +63,8 @@
 			font-weight: 400;
 			letter-spacing: 1px;
 
-			@include respon(exsmall) {
-				font-size: 2.5rem;
+			@include respon(small) {
+				font-size: 2rem;
 			}
 		}
 	}

@@ -6,17 +6,8 @@
 	@include respon(large) {
 		margin: 5rem 15rem;
 	}
-	@include respon(big) {
-		margin: 5rem 10rem;
-	}
 	@include respon(middle) {
 		margin: 5rem 5rem;
-	}
-	@include respon(exsmall) {
-		margin: 5rem 3rem;
-	}
-	@include respon(phone) {
-		margin: 5rem 2rem;
 	}
 
 	&-box {
@@ -24,14 +15,12 @@
 		width: calc(100% / 4 - 4rem);
 		height: auto;
 
-		@include respon(exsmall) {
-			width: calc(100% / 3 - 4rem);
-		}
-		@include respon(phone) {
-			width: calc(100% / 2 - 4rem);
-		}
 		&:hover {
 			box-shadow: 0 0.5rem 20px 0.5rem $colorShadow-1, 0 0.3rem 20px 0.25rem $colorShadow-2;
+		}
+
+		@include respon(small) {
+			width: calc(100% / 2 - 4rem);
 		}
 	}
 
@@ -41,8 +30,8 @@
 		align-items: center;
 		padding: 3rem;
 
-		@include respon(exsmall) {
-			padding: 4rem;
+		@include respon(small) {
+			padding: 2rem;
 		}
 
 		> img {
@@ -53,6 +42,10 @@
 		> p {
 			font-size: $fontSize-small;
 			line-height: 1.5;
+
+			@include respon(small) {
+				font-size: 2rem;
+			}
 		}
 	}
 
@@ -62,5 +55,9 @@
 		font-weight: 700;
 		letter-spacing: 1px;
 		margin: 1rem 0;
+
+		@include respon(small) {
+			font-size: 2.5rem;
+		}
 	}
 }
