@@ -323,7 +323,7 @@ li {
 .cetagory > a:not(:last-child) {
   margin-right: 4rem;
 }
-@media (max-width: 61.25em) {
+@media (max-width: 80em) {
   .cetagory > a:not(:last-child) {
     margin-bottom: 2rem;
     margin-right: 2rem;

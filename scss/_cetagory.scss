@@ -19,7 +19,7 @@
 	> a {
 		&:not(:last-child) {
 			margin-right: 4rem;
-			@include respon(small) {
+			@include respon(middle) {
 				margin-bottom: 2rem;
 				margin-right: 2rem;
 			}
