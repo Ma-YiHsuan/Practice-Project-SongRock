@@ -84,4 +84,7 @@ export const headerComponent = {
 			}
 		},
 	},
+	unmounted() {
+		window.removeEventListener('scroll', this.scrollDown);
+	},
 };
