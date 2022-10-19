@@ -4,18 +4,11 @@
 		font-weight: 700;
 		margin-bottom: 1.5rem;
 		letter-spacing: 2px;
-	}
-}
 
-@mixin checkboxPos {
-	content: '';
-	position: absolute;
-	top: -1px;
-	height: 2rem;
-	width: 2rem;
-	background-color: transparent;
-	z-index: 3;
-	visibility: visible;
+		@include respon(middle) {
+			font-size: $fontSize-default;
+		}
+	}
 }
 
 .footer {
@@ -30,10 +23,6 @@
 		@include respon(middle) {
 			padding: 5rem 10rem;
 		}
-		// @include respon(phone) {
-		// 	padding: 8rem 10rem;
-		// 	justify-content: center;
-		// }
 
 		&-lists {
 			display: inline-block;
@@ -41,9 +30,13 @@
 			font-size: $fontSize-small;
 			@include footerH3;
 
+			@include respon(large) {
+				margin-right: 15rem;
+			}
 			@include respon(middle) {
 				margin-right: 10rem;
 				margin-bottom: 5rem;
+				font-size: $fontSize-default;
 			}
 			@include respon(small) {
 				margin-right: 0;
@@ -55,7 +48,7 @@
 
 			li:not(:last-child) {
 				margin-bottom: 1rem;
-				@include respon(small) {
+				@include respon(middle) {
 					margin-bottom: 2rem;
 				}
 			}
@@ -71,6 +64,10 @@
 			width: 50rem;
 			@include footerH3;
 
+			@include respon(middle) {
+				font-size: $fontSize-default;
+			}
+
 			&--content {
 				margin-top: 2rem;
 				position: relative;
@@ -85,6 +82,7 @@
 				width: 40rem;
 				padding: 2rem;
 				border: none;
+				border-radius: 0;
 				background-color: #f1f1f1;
 
 				&:focus {
@@ -97,9 +95,11 @@
 				}
 				@include respon(middle) {
 					height: 5.4rem;
+					font-size: $fontSize-default;
 				}
 				@include respon(small) {
 					height: 5.6rem;
+					font-size: 2rem;
 				}
 			}
 
@@ -114,6 +114,10 @@
 				cursor: pointer;
 				transition: all 0.5s;
 
+				@include respon(middle) {
+					font-size: $fontSize-default;
+				}
+
 				&:hover {
 					color: $colorBlack;
 					background-color: $colorOrg;
@@ -121,35 +125,44 @@
 			}
 
 			&--checkbox {
-				display: inline-block;
-				position: relative;
-				margin-right: 1.5rem;
-				cursor: pointer;
-				visibility: hidden;
+				display: none;
 
-				&::after {
-					@include checkboxPos;
-					border: 1px solid $colorGry;
+				&:checked + label .material-icons.style {
+					opacity: 1;
 				}
-				&:hover::after {
+				&:checked + label .footer-box-form--checklabel-border {
 					border: 1px solid $colorOrg;
-				}
-				&:checked::after {
-					@include checkboxPos;
-					border: 1px solid $colorOrg;
-				}
-				&:checked + .material-icons.style {
-					visibility: visible;
 				}
 			}
 
-			.material-icons.style {
-				position: absolute;
-				left: 1px;
-				font-size: 1.8rem;
-				color: $colorOrg;
-				z-index: 1;
-				visibility: hidden;
+			&--checklabel {
+				position: relative;
+				padding-left: 2.5rem;
+
+				&-border {
+					display: inline-block;
+					position: absolute;
+					left: 0;
+					top: -0.2rem;
+					height: 1.9rem;
+					width: 1.9rem;
+					border: 1px solid $colorGry;
+					background-color: transparent;
+					cursor: pointer;
+					margin-right: 1rem;
+
+					&:hover {
+						border: 1px solid $colorOrg;
+					}
+
+					.material-icons.style {
+						position: absolute;
+						font-size: 1.8rem;
+						color: $colorOrg;
+						z-index: 1;
+						opacity: 0;
+					}
+				}
 			}
 		}
 	}
@@ -207,9 +220,13 @@
 				}
 			}
 
+			@include respon(middle) {
+				font-size: $fontSize-default;
+			}
 			@include respon(small) {
 				height: 7rem;
 				padding: 2rem 0;
+				font-size: 2rem;
 			}
 		}
 	}

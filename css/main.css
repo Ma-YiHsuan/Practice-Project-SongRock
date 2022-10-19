@@ -10,14 +10,9 @@
 html {
   font-size: 62.5%;
 }
-@media (max-width: 105.625em) {
+@media (max-width: 80em) {
   html {
     font-size: 56.25%;
-  }
-}
-@media (max-width: 61.25em) {
-  html {
-    font-size: 50%;
   }
 }
 
@@ -241,7 +236,7 @@ li {
   text-align: center;
   z-index: 1;
 }
-@media (max-width: 61.25em) {
+@media (max-width: 80em) {
   .title-content {
     width: 80%;
     left: 10%;
@@ -265,6 +260,11 @@ li {
   font-size: 1.6rem;
   font-weight: 400;
   color: #000;
+}
+@media (max-width: 80em) {
+  .title-item {
+    font-size: 2rem;
+  }
 }
 .title-item:not(:first-of-type)::before {
   content: "/";
@@ -410,7 +410,7 @@ li {
   align-items: center;
   padding: 3rem;
 }
-@media (max-width: 61.25em) {
+@media (max-width: 105.625em) {
   .section-stuff-content {
     padding: 2rem;
   }
@@ -466,9 +466,20 @@ li {
   letter-spacing: 2px;
 }
 @media (max-width: 80em) {
+  .footer-box-lists h3 {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 105.625em) {
+  .footer-box-lists {
+    margin-right: 15rem;
+  }
+}
+@media (max-width: 80em) {
   .footer-box-lists {
     margin-right: 10rem;
     margin-bottom: 5rem;
+    font-size: 1.6rem;
   }
 }
 @media (max-width: 61.25em) {
@@ -483,7 +494,7 @@ li {
 .footer-box-lists li:not(:last-child) {
   margin-bottom: 1rem;
 }
-@media (max-width: 61.25em) {
+@media (max-width: 80em) {
   .footer-box-lists li:not(:last-child) {
     margin-bottom: 2rem;
   }
@@ -502,6 +513,16 @@ li {
   margin-bottom: 1.5rem;
   letter-spacing: 2px;
 }
+@media (max-width: 80em) {
+  .footer-box-form h3 {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 80em) {
+  .footer-box-form {
+    font-size: 1.6rem;
+  }
+}
 .footer-box-form--content {
   margin-top: 2rem;
   position: relative;
@@ -514,6 +535,7 @@ li {
   width: 40rem;
   padding: 2rem;
   border: none;
+  border-radius: 0;
   background-color: #f1f1f1;
 }
 .footer-box-form--email:focus {
@@ -528,11 +550,13 @@ li {
 @media (max-width: 80em) {
   .footer-box-form--email {
     height: 5.4rem;
+    font-size: 1.6rem;
   }
 }
 @media (max-width: 61.25em) {
   .footer-box-form--email {
     height: 5.6rem;
+    font-size: 2rem;
   }
 }
 .footer-box-form--button {
@@ -546,52 +570,49 @@ li {
   cursor: pointer;
   transition: all 0.5s;
 }
+@media (max-width: 80em) {
+  .footer-box-form--button {
+    font-size: 1.6rem;
+  }
+}
 .footer-box-form--button:hover {
   color: #000;
   background-color: #faa619;
 }
 .footer-box-form--checkbox {
-  display: inline-block;
+  display: none;
+}
+.footer-box-form--checkbox:checked + label .material-icons.style {
+  opacity: 1;
+}
+.footer-box-form--checkbox:checked + label .footer-box-form--checklabel-border {
+  border: 1px solid #faa619;
+}
+.footer-box-form--checklabel {
   position: relative;
-  margin-right: 1.5rem;
-  cursor: pointer;
-  visibility: hidden;
+  padding-left: 2.5rem;
 }
-.footer-box-form--checkbox::after {
-  content: "";
+.footer-box-form--checklabel-border {
+  display: inline-block;
   position: absolute;
-  top: -1px;
-  height: 2rem;
-  width: 2rem;
-  background-color: transparent;
-  z-index: 3;
-  visibility: visible;
+  left: 0;
+  top: -0.2rem;
+  height: 1.9rem;
+  width: 1.9rem;
   border: 1px solid #c9c9c9;
-}
-.footer-box-form--checkbox:hover::after {
-  border: 1px solid #faa619;
-}
-.footer-box-form--checkbox:checked::after {
-  content: "";
-  position: absolute;
-  top: -1px;
-  height: 2rem;
-  width: 2rem;
   background-color: transparent;
-  z-index: 3;
-  visibility: visible;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+.footer-box-form--checklabel-border:hover {
   border: 1px solid #faa619;
 }
-.footer-box-form--checkbox:checked + .material-icons.style {
-  visibility: visible;
-}
-.footer-box-form .material-icons.style {
+.footer-box-form--checklabel-border .material-icons.style {
   position: absolute;
-  left: 1px;
   font-size: 1.8rem;
   color: #faa619;
   z-index: 1;
-  visibility: hidden;
+  opacity: 0;
 }
 .footer-bottom {
   height: 12rem;
@@ -646,9 +667,15 @@ li {
 .footer-bottom--copy > a:hover {
   color: #fff;
 }
+@media (max-width: 80em) {
+  .footer-bottom--copy {
+    font-size: 1.6rem;
+  }
+}
 @media (max-width: 61.25em) {
   .footer-bottom--copy {
     height: 7rem;
     padding: 2rem 0;
+    font-size: 2rem;
   }
 }/*# sourceMappingURL=main.css.map */
