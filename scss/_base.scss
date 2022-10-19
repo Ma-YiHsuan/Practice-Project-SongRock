@@ -9,11 +9,8 @@
 html {
 	font-size: 62.5%; //1rem = 10px
 
-	@include respon(large) {
+	@include respon(middle) {
 		font-size: 56.25%; //1rem = 9px
-	}
-	@include respon(small) {
-		font-size: 50%; //1rem = 8px
 	}
 }
 

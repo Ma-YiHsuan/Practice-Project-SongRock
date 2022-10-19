@@ -1,15 +1,9 @@
-// 768    phone
 // 980    small
 // 1280   middle
 // 1690   large
 // 1690+  設計初
 
 @mixin respon($breakpoint) {
-	@if $breakpoint == phone {
-		@media (max-width: 48em) {
-			@content;
-		}
-	}
 	@if $breakpoint == small {
 		@media (max-width: 61.25em) {
 			@content;
