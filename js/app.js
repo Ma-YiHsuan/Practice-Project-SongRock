@@ -1,5 +1,6 @@
 import { createApp } from 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.40/vue.esm-browser.js';
 import { headerComponent } from './header.js';
+import { headerPhoneComp } from './headerPhone.js';
 
 const app = createApp({
 	data() {
@@ -7,6 +8,7 @@ const app = createApp({
 			picLink: 'https://s.yimg.com/zp/MerchandiseImages/7AEA34653A-SP-7471103.jpg',
 			name: 'Stuff Name',
 			amount: 10,
+			isLargePage: false,
 			footerLists: [
 				{
 					title: 'company',
@@ -33,8 +35,26 @@ const app = createApp({
 			});
 		},
 	},
+	mounted() {
+		if (window.innerWidth <= 1280) {
+			this.isLargePage = false;
+		} else {
+			this.isLargePage = true;
+		}
+		window.addEventListener('resize', this.resizeHandler);
+	},
+	methods: {
+		resizeHandler() {
+			if (window.innerWidth <= 1280) {
+				this.isLargePage = false;
+			} else {
+				this.isLargePage = true;
+			}
+		},
+	},
 });
 
 app.component('header-comp', headerComponent);
+app.component('header-phone', headerPhoneComp);
 
 app.mount('#app');

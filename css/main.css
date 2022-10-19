@@ -99,7 +99,6 @@ li {
   padding: 0 4rem;
   display: flex;
   justify-content: space-between;
-  /* https://design-library.jp/lab/icons-menu */
 }
 .navigate-logo {
   width: 13.5rem;
@@ -112,12 +111,12 @@ li {
 .navigate-list {
   display: inline-block;
   font-size: 0;
-  margin-left: 10rem;
+  margin-left: 15rem;
   padding: 2rem 0;
 }
-@media (max-width: 80em) {
+@media (max-width: 105.625em) {
   .navigate-list {
-    margin-left: 2rem;
+    margin-left: 8rem;
   }
 }
 .navigate-item {
@@ -128,29 +127,18 @@ li {
   text-align: center;
   letter-spacing: 3px;
 }
+@media (max-width: 105.625em) {
+  .navigate-item {
+    letter-spacing: 2px;
+  }
+}
 .navigate-item:not(:last-child) {
   margin-right: 3rem;
 }
-@media (max-width: 80em) {
+@media (max-width: 105.625em) {
   .navigate-item:not(:last-child) {
-    margin-right: 1rem;
+    margin-right: 2rem;
   }
-}
-.navigate .dli-menu {
-  display: inline-block;
-  vertical-align: middle;
-  color: #333;
-  line-height: 1;
-  width: 1em;
-}
-.navigate .dli-menu > span {
-  display: block;
-  height: 0.1em;
-  background: currentColor;
-  border-radius: 0.1em;
-}
-.navigate .dli-menu > span + span {
-  margin-top: 0.22em;
 }
 .navigate-form {
   width: 22rem;
@@ -161,11 +149,6 @@ li {
 @media (max-width: 105.625em) {
   .navigate-form {
     width: 25rem;
-  }
-}
-@media (max-width: 80em) {
-  .navigate-form {
-    width: 30rem;
   }
 }
 .navigate-input {
@@ -300,6 +283,103 @@ li {
   border-radius: 0 0.1em 0.1em 0;
   transform: translateY(-50%) rotate(45deg);
   transform-origin: left center;
+}
+
+.menu {
+  padding: 1.5rem 0;
+  position: relative;
+}
+.menu .hamberge {
+  display: inline-block;
+  font-size: 2.5rem;
+  margin-right: 3rem;
+  cursor: pointer;
+  /* https://design-library.jp/lab/ */
+}
+.menu .hamberge:hover > .dli-menu, .menu .hamberge:hover > .dli-close {
+  color: #faa619;
+}
+.menu .hamberge .dli-menu {
+  display: inline-block;
+  vertical-align: middle;
+  color: #fff;
+  line-height: 1;
+  width: 1em;
+  transition: color 0.5s ease-out;
+}
+.menu .hamberge .dli-menu > span {
+  display: block;
+  height: 0.1em;
+  background: currentColor;
+  border-radius: 0.1em;
+}
+.menu .hamberge .dli-menu > span + span {
+  margin-top: 0.22em;
+}
+.menu .hamberge .dli-close {
+  display: inline-block;
+  vertical-align: middle;
+  color: #fff;
+  line-height: 1;
+  width: 1em;
+  height: 0.1em;
+  background: currentColor;
+  border-radius: 0.1em;
+  position: relative;
+  transform: rotate(45deg);
+}
+.menu .hamberge .dli-close::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: inherit;
+  transform: rotate(90deg);
+}
+.menu-list {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 50vw;
+  padding: 4rem;
+  background-color: #000;
+  text-align: center;
+  z-index: -1;
+}
+.menu-list li {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+.menu-list li:not(:last-child) {
+  margin-bottom: 3rem;
+}
+.menu-form {
+  display: inline-block;
+  font-size: 2.5rem;
+}
+.menu-form-input {
+  font-size: 56.25%;
+  width: 100%;
+  border: none;
+  height: 3rem;
+  padding: 2rem;
+}
+.menu-form-input:focus {
+  outline: none;
+  border-top: 2px solid #fff;
+  border-bottom: 3.5px solid #faa619;
+}
+.menu-form-bg {
+  position: absolute;
+  padding: 2rem;
+  width: 50vw;
+  top: 100%;
+  right: 0;
+  background-color: #000;
+  z-index: -1;
 }
 
 .cetagory {

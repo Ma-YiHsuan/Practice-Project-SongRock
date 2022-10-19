@@ -1,0 +1,108 @@
+.menu {
+	padding: 1.5rem 0;
+	position: relative;
+
+	.hamberge {
+		display: inline-block;
+		font-size: 2.5rem;
+		margin-right: 3rem;
+		cursor: pointer;
+
+		&:hover > .dli-menu,
+		&:hover > .dli-close {
+			color: $colorOrg;
+		}
+
+		/* https://design-library.jp/lab/ */
+		.dli-menu {
+			display: inline-block;
+			vertical-align: middle;
+			color: $colorWhite;
+			line-height: 1;
+			width: 1em;
+			transition: color 0.5s ease-out;
+			> span {
+				display: block;
+				height: 0.1em;
+				background: currentColor;
+				border-radius: 0.1em;
+			}
+			> span + span {
+				margin-top: 0.22em;
+			}
+		}
+
+		.dli-close {
+			display: inline-block;
+			vertical-align: middle;
+			color: $colorWhite;
+			line-height: 1;
+			width: 1em;
+			height: 0.1em;
+			background: currentColor;
+			border-radius: 0.1em;
+			position: relative;
+			transform: rotate(45deg);
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: inherit;
+				border-radius: inherit;
+				transform: rotate(90deg);
+			}
+		}
+	}
+
+	&-list {
+		position: absolute;
+		top: 100%;
+		right: 0;
+		width: 50vw;
+		padding: 4rem;
+		background-color: $colorBlack;
+		text-align: center;
+		z-index: -1;
+
+		li {
+			font-size: 2rem;
+			text-transform: uppercase;
+
+			&:not(:last-child) {
+				margin-bottom: 3rem;
+			}
+		}
+	}
+
+	&-form {
+		display: inline-block;
+		font-size: 2.5rem;
+
+		&-input {
+			font-size: 56.25%;
+			width: 100%;
+			border: none;
+			height: 3rem;
+			padding: 2rem;
+
+			&:focus {
+				outline: none;
+				border-top: 2px solid $colorWhite;
+				border-bottom: 3.5px solid $colorOrg;
+			}
+		}
+		&-bg {
+			position: absolute;
+			padding: 2rem;
+			width: 50vw;
+			top: 100%;
+			right: 0;
+			background-color: $colorBlack;
+			z-index: -1;
+		}
+	}
+}
