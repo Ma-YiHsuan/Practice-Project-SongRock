@@ -191,14 +191,10 @@
 		text-align: center;
 		z-index: 1;
 
-		@include respon(small) {
+		@include respon(middle) {
 			width: 80%;
 			left: 10%;
 		}
-		// @include respon(phone) {
-		// 	width: 90%;
-		// 	left: 5%;
-		// }
 
 		> p {
 			margin-top: 2rem;
@@ -221,6 +217,10 @@
 		font-size: $fontSize-default;
 		font-weight: 400;
 		color: $colorBlack;
+
+		@include respon(middle) {
+			font-size: 2rem;
+		}
 
 		&:not(:first-of-type)::before {
 			content: '/';
