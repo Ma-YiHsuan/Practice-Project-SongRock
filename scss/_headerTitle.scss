@@ -75,11 +75,11 @@
 	&-list {
 		display: inline-block;
 		font-size: 0;
-		margin-left: 10rem;
+		margin-left: 15rem;
 		padding: 2rem 0;
 
-		@include respon(middle) {
-			margin-left: 2rem;
+		@include respon(large) {
+			margin-left: 8rem;
 		}
 	}
 
@@ -91,29 +91,16 @@
 		text-align: center;
 		letter-spacing: 3px;
 
+		@include respon(large) {
+			letter-spacing: 2px;
+		}
+
 		&:not(:last-child) {
 			margin-right: 3rem;
 
-			@include respon(middle) {
-				margin-right: 1rem;
+			@include respon(large) {
+				margin-right: 2rem;
 			}
-		}
-	}
-	/* https://design-library.jp/lab/icons-menu */
-	.dli-menu {
-		display: inline-block;
-		vertical-align: middle;
-		color: #333;
-		line-height: 1;
-		width: 1em;
-		> span {
-			display: block;
-			height: 0.1em;
-			background: currentColor;
-			border-radius: 0.1em;
-		}
-		> span + span {
-			margin-top: 0.22em;
 		}
 	}
 
@@ -125,9 +112,6 @@
 
 		@include respon(large) {
 			width: 25rem;
-		}
-		@include respon(middle) {
-			width: 30rem;
 		}
 	}
 
